@@ -1,7 +1,9 @@
 package main
 
 import (
+	//	a "bot/answers"
 	"log"
+
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api"
 )
 
@@ -27,9 +29,18 @@ func main() {
 
 		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 
-		msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
+		msg := tgbotapi.NewMessage(update.Message.Chat.ID, answer(update.Message.Text)+" abc")
 		msg.ReplyToMessageID = update.Message.MessageID
 
 		bot.Send(msg)
+	}
+}
+
+func answer(a string) string {
+	switch a {
+	case "1":
+		return "Hi!"
+	default:
+		return "Dont no this"
 	}
 }
