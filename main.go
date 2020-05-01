@@ -29,7 +29,8 @@ func main() {
 
 		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 
-		msg := tgbotapi.NewMessage(update.Message.Chat.ID, answer(update.Message.Text)+" abc")
+		text := answer(update.Message.Text) + " " + update.Message.Chat.UserName
+		msg := tgbotapi.NewMessage(update.Message.Chat.ID, text)
 		msg.ReplyToMessageID = update.Message.MessageID
 
 		bot.Send(msg)
@@ -41,6 +42,6 @@ func answer(a string) string {
 	case "1":
 		return "Hi!"
 	default:
-		return "Dont no this"
+		return "Dont know this"
 	}
 }
