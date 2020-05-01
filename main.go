@@ -36,12 +36,3 @@ func main() {
 		bot.Send(msg)
 	}
 }
-
-// func answer(a string) string {
-// 	switch a {
-// 	case "❤️":
-// 		return "Love you too, "
-// 	default:
-// 		return "Send me love ❤️, "
-// 	}
-// }
