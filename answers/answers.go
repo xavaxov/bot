@@ -1,6 +1,6 @@
 package answers
 
-func answer(a string) string {
+func Answer(a string) string {
 	switch a {
 	case "1":
 		return "Hi!"
